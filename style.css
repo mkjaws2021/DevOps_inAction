@@ -1,0 +1,141 @@
+:root {
+    --primary: #0078ff;
+    --dark: #0b0f19;
+    --light: #f4f4f9;
+    --text: #111;
+    --card-bg: #fff;
+  }
+  
+  [data-theme="dark"] {
+    --primary: #0dcaf0;
+    --dark: #f4f4f9;
+    --light: #0b0f19;
+    --text: #f4f4f9;
+    --card-bg: #121212;
+  }
+  
+  body {
+    font-family: 'Segoe UI', sans-serif;
+    background: var(--light);
+    color: var(--text);
+    margin: 0;
+    padding: 0;
+    transition: background 0.3s, color 0.3s;
+  }
+  
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--dark);
+    color: white;
+    padding: 1rem 2rem;
+    position: sticky;
+    top: 0;
+  }
+  
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+  }
+  
+  nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+  }
+  
+  nav a.active, nav a:hover {
+    color: var(--primary);
+  }
+  
+  #theme-toggle {
+    background: transparent;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--primary);
+  }
+  
+  section {
+    padding: 2rem 4rem;
+    display: none;
+  }
+  
+  section.active {
+    display: block;
+  }
+  
+  /* Animated Hero Section */
+  .hero {
+    background: linear-gradient(135deg, #0078ff, #00d4ff);
+    color: white;
+    text-align: center;
+    padding: 6rem 2rem;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .hero-content {
+    position: relative;
+    z-index: 2;
+  }
+  
+  .animate-text {
+    animation: fadeInUp 1.5s ease-in-out;
+  }
+  
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(40px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .cta {
+    background: var(--dark);
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  
+  .cta:hover {
+    background: var(--primary);
+  }
+  
+  /* Project Cards */
+  .project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+  }
+  
+  .project-card {
+    background: var(--card-bg);
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: transform .2s, background .3s;
+  }
+  
+  .project-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  /* Footer */
+  footer {
+    text-align: center;
+    background: var(--dark);
+    color: white;
+    padding: 1rem;
+    margin-top: 3rem;
+  }
+  

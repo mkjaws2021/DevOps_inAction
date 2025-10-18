@@ -1,0 +1,22 @@
+@import url('../style.css');
+
+.posts {
+  padding: 2rem;
+  max-width: 900px;
+  margin: auto;
+}
+article {
+  background: var(--card-bg);
+  margin-bottom: 1.5rem;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
+}
+article:hover {
+  transform: translateY(-5px);
+}
+article h2 a {
+  text-decoration: none;
+  color: var(--primary);
+}
