@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mahesh | Tech Portfolio</title>
+
+  <style>
+    /* ---------- GLOBAL STYLES ---------- */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #1e1f29, #2b2e4a);
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      height: 100vh;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    /* ---------- HEADER ---------- */
+    header {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    header h1 {
+      font-size: 2.2rem;
+      color: #ffcc00;
+      letter-spacing: 2px;
+    }
+
+    header p {
+      font-size: 1rem;
+      color: #bdbdbd;
+    }
+
+    /* ---------- TAB NAVIGATION ---------- */
+    .tabs {
+      display: flex;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 10px;
+      overflow: hidden;
+      margin-bottom: 30px;
+    }
+
+    .tab-btn {
+      flex: 1;
+      padding: 12px 0;
+      text-align: center;
+      cursor: pointer;
+      transition: 0.3s;
+      font-weight: 500;
+      color: #ccc;
+    }
+
+    .tab-btn:hover {
+      background: rgba(255, 255, 255, 0.15);
+      color: #fff;
+    }
+
+    .tab-btn.active {
+      background: #ffcc00;
+      color: #1e1f29;
+      font-weight: 600;
+    }
+
+    /* ---------- TAB CONTENT ---------- */
+    .tab-content {
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: 12px;
+      padding: 25px;
+      width: 70%;
+      max-width: 800px;
+      text-align: center;
+      animation: fadeIn 0.5s ease;
+    }
+
+    .tab-pane {
+      display: none;
+    }
+
+    .tab-pane.active {
+      display: block;
+    }
+
+    /* ---------- ANIMATION ---------- */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ---------- RESPONSIVE ---------- */
+    @media (max-width: 768px) {
+      .tab-content {
+        width: 90%;
+      }
+
+      header h1 {
+        font-size: 1.8rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Mahesh Jayaraj</h1>
+    <p>Senior DevOps & Automation Architect | Cloud | AI | CI/CD Specialist</p>
+  </header>
+
+  <div class="tabs">
+    <div class="tab-btn active" onclick="showTab('home')">Home</div>
+    <div class="tab-btn" onclick="showTab('devops')">DevOps</div>
+    <div class="tab-btn" onclick="showTab('ai')">AI / ML</div>
+    <div class="tab-btn" onclick="showTab('projects')">Projects</div>
+    <div class="tab-btn" onclick="showTab('contact')">Contact</div>
+  </div>
+
+  <div class="tab-content">
+    <div id="home" class="tab-pane active">
+      <h2>About Me</h2>
+      <p>
+        I am a passionate Senior DevOps & Automation Engineer with 15+ years of experience
+        driving CI/CD automation, Cloud transformation, and scalable deployment solutions.
+        I enjoy building secure, efficient, and AI-powered infrastructure that bridges
+        development and operations seamlessly.
+      </p>
+    </div>
+
+    <div id="devops" class="tab-pane">
+      <h2>DevOps Expertise</h2>
+      <p>
+        Specialized in designing and implementing CI/CD pipelines using Jenkins, GitLab,
+        and AWS CodePipeline. Experienced in container orchestration with Docker & Kubernetes,
+        Infrastructure as Code (Terraform, CloudFormation), and monitoring with Prometheus,
+        Grafana, and ELK stack.
+      </p>
+    </div>
+
+    <div id="ai" class="tab-pane">
+      <h2>AI & ML Focus</h2>
+      <p>
+        Exploring AI-driven automation for CI/CD optimization and predictive monitoring.
+        Skilled in Python, TensorFlow, and OpenAI APIs to integrate intelligence into
+        infrastructure and deployment workflows.
+      </p>
+    </div>
+
+    <div id="projects" class="tab-pane">
+      <h2>Featured Projects</h2>
+      <ul style="list-style: none; padding-top: 10px;">
+        <li>⚙️ Automated Multi-Stage CI/CD Pipeline for Healthcare Apps (AWS + Jenkins)</li>
+        <li>☁️ Kubernetes Migration for Legacy Java Systems (EKS)</li>
+        <li>🤖 AI-Driven Anomaly Detection in Cloud Resource Utilization</li>
+      </ul>
+    </div>
+
+    <div id="contact" class="tab-pane">
+      <h2>Contact</h2>
+      <p>
+        📧 Email: <a href="mailto:mahesh@example.com" style="color:#ffcc00;">mahesh@example.com</a><br/>
+        🌐 LinkedIn: <a href="https://linkedin.com/in/mahesh" target="_blank" style="color:#ffcc00;">linkedin.com/in/mahesh</a>
+      </p>
+    </div>
+  </div>
+
+  <script>
+    function showTab(tabId) {
+      const tabs = document.querySelectorAll('.tab-btn');
+      const panes = document.querySelectorAll('.tab-pane');
+
+      tabs.forEach(tab => tab.classList.remove('active'));
+      panes.forEach(pane => pane.classList.remove('active'));
+
+      document.querySelector(`.tab-btn[onclick="showTab('${tabId}')"]`).classList.add('active');
+      document.getElementById(tabId).classList.add('active');
+    }
+  </script>
+</body>
+</html>
